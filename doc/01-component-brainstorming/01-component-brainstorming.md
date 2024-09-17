@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Elliott Simpson
+- **Dot Number**: Simpson.855
+- **Due Date**: 9/16/2024
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -52,8 +50,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +62,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -98,23 +92,15 @@ do good work.
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+     Hey grader, I like video games, cooking, and doing research. Most importantly I like to think and come up with solutions. I am currently working as a full stackdeveloper in the OSU BOSS competition and doing research in Food Science and Technology building.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -192,70 +178,91 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Sensor Instance
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - So this one should represent the data output of a sensor.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void setHumidity(float humidity)`: sets the humidity reading
+    - `float getHumidity()`: returns the humidity reading
+    - `void setMOS(float mos)`: sets the metal oxide sensor reading
+    - `float getMOS()`: returns the metal oxide sensor reading
+    - `void setTemp(float temp)`: sets the tempratue reading
+    - `float getTemp()`: returns the temprature reading
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `float[3] getReading()`: returns data in humidity, MOS, Temp
+    - `float weights()`: kind of like hashing, but this triangulates the data into a single stream
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No, it should not change once it is established. So its constructor would be the only place where this data is pulled.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't think it will rely on internal classes since it will be more bare bones to java's built in classes.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yeah, since everything is doing computational tasks. getReading() would just call all get methods.
 
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: Cell (for numbers)
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Honestly, I am coming up with this while doing the assignment so sorry if it doesn't make too much sense. This is supposed to work as a generalized node or step in the progress of creating a trained map. This will possibly be used to analyze the part above by making it more general.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `boolean hasValue()`: true if value exists, false if not
+    - `void addCell(Cell item)`: adds the cell to the list of next items
+    - `Map getCells()`: returns the cells that are most predicted to be next
+    - `boolean removeCell(Cell item)`: returns true if it is removed and false it not
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `Cell NextCell(Cell last)`: predicts the next cell given last
+    - `Cell worstCell()`: returns the worst weighted cell
+    - `Cell bestCell()`: returns the best cell based on what is loaded
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Some parts are mutable yes, while the kernal class' individual data won't be the cells that are associated with `this` will be.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Possibly, if I want to make the ability to find different levels of weights more efficiently O(1) vs O(n).
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Kind of, the main cell's data will be constant while the associated cells won't be.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I think I could. worstCell would just return the value at the 'last' position in the map
 
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: SmartDisplay
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+      Honestly, I have no idea if this is better than the last two. This one is more for the use of creating a home monitoring system.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void changeHumidity(int percentage)`: changes the reading of humidity
+    - `void changeMOS(int MOS)`: changes the MOS value
+    - `void changeTemp(int MOS)`: changes the temp value
+    - `boolean isBadAir()`: returns true if under particulate value, false if not
+    - `int getMOS()`: return the MOS value
+    - `int humidity()`: returns humidity
+    - `int temperature()`: ...
+    - `int getAltitude()`: returns possible height
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `boolean isSafe()`: can calculate safe envrinment
+    - `void saveData()`: saves the values to text page
+    - `void loadData(String file)`: reads in data file
+    - `void displayInfo()`: this is a simple to console output
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Maybe.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Maybe.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes. loadData would just pull data from a file and load it using kernel methods.
 
 ## Post-Assignment
 
@@ -263,8 +270,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -303,8 +308,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
-
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
 this [Markdown to PDF guide][markdown-to-pdf-guide]. However, PDFs should be
@@ -312,8 +315,6 @@ created for you automatically every time you save, so just double check that
 all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
-
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
 
 ### Peer Review
 

@@ -8,6 +8,14 @@ the following form: YYYY.0M.0D.
 
 ## [Unreleased]
 
+## [2024.16.09]
+
+### Added
+
+- Designed a Sensor Instance component
+- Designed a Cell component
+- Designed a SmartDisplay component
+
 ## [2024.08.07]
 
 ### Added
